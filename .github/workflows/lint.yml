@@ -12,8 +12,8 @@ jobs:
         with:
           python-version: "3.9"
       - name: Install dependencies
-      run: |
-        pipenv install --dev
+        run: |
+          pipenv install --dev
       - name: Run flake8
         uses: julianwachholz/flake8-action@v1.1.0
         with:
