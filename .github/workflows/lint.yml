@@ -21,6 +21,6 @@ jobs:
         uses: julianwachholz/flake8-action@v1.1.0
         with:
           checkName: "Python Lint"
-      - name: Analysing the code with pylint
+      - name: Run pylint
         run: |
-          pylint `ls -R|grep .py$|xargs`
+          pipenv run pylint flaskr
