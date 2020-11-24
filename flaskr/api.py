@@ -1,3 +1,7 @@
+"""
+A simple Flask API
+"""
+
 from flask import Flask
 
 app = Flask(__name__)
@@ -5,6 +9,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+    """
+    Index
+    """
     data = {'text': 'App Works!'}
     return {
         'status': 'success',
@@ -15,6 +22,9 @@ def index():
 
 @app.route('/tag/<text>')
 def tagger(text):
+    """
+    Tagger endpoint
+    """
     data = {'text': text}
     return {
             'status': 'success',
@@ -24,7 +34,10 @@ def tagger(text):
 
 
 @app.errorhandler(404)
-def page_not_found(error):
+def page_not_found(error):  # pylint: disable=unused-argument
+    """
+    404 handler
+    """
     message = {'text': 'Page Not Found'}
     return {
            'status': 'error',
